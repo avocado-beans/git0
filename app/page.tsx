@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Suspense } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 
 import { EditorView } from 'codemirror';
@@ -15,9 +15,10 @@ const customLinterTheme = EditorView.theme({
 
 export default function App() {
   const [code, setCode] = useState<string>("console.log('hello')")
-  const [selectedCode, setSelectedCode] = useState<string>();
+  const [selectedCode, setSelectedCode] = useState<string>('');
   const [geminiCode, setGeminiCode] = useState<string>();
 
+  const [isLoading, setIsLoading] = useState<boolean>(false);  
   const [prompt, setPrompt] = useState<string>('Generate a click counter in react js with typescript, give code only');
   const [trigger, setTrigger] = useState<boolean>(false);
 
@@ -33,20 +34,21 @@ export default function App() {
 
   useEffect(() => {
     const fetchData = async () =>{
-      let res: GeminiResponse;
-      if ( code.length > 0 ) {
-        res = await Gemini(selectedCode+ '\n' + prompt);
-      } else {
-        res = await Gemini(prompt);
+      setIsLoading(true);
+      try {
+        const res: GeminiResponse = await Gemini(selectedCode.length > 0 ? selectedCode+ '\n' +prompt : prompt)
+        setGeminiCode(res?.candidates[0].content.parts[0].text)
+      } catch (err) {
+        console.log('Error fetching data:', err)
+      } finally {
+        setIsLoading(false);
       }
-      
-      const prevCode = selectedCode;
-      setGeminiCode(prevCode + "\n//" + res?.candidates[0].content.parts[0].text)
-    }
-
+    } 
+    
     if (trigger) {
-    fetchData();
-    setTrigger(false);
+      
+      fetchData();
+      setTrigger(false);
     }
   }, [trigger])
 
@@ -54,7 +56,7 @@ export default function App() {
     <div className='flex justify-evenly'>
     <div className='flex flex-col w-[50%] p-[10px] gap-[10px]'>
     <form onSubmit={(e) => {e.preventDefault(); setTrigger(true)}}>
-      <input className='w-[100%]'type="text" placeholder="Enter instructions" onChange={(e) => {setPrompt(e.target.value)}}/>
+      <input className='w-[100%] text-wrap' type="text" placeholder="Enter instructions" onChange={(e) => {setPrompt(e.target.value)}}/>
     </form>
 
     <CodeMirror
@@ -80,22 +82,26 @@ export default function App() {
       
       onChange={(e) => {setCode(e)}}
       onMouseUp={handleSelection}
+      onKeyUp={handleSelection}
       ref={codeRef}
       />
 
     </div>
 
-    <div className='flex flex-col w-[50%] p-[10px] gap-[10px]'>
+    <div className='flex flex-col w-[50%] p-[10px] gap-[10px] overflow-y-auto h-[100vh]'>
       <span>[Gemini Code Review]:</span>
+      {isLoading ? 
+      <div>Thinking...</div> : 
       <CodeMirror
-      className='border-2'
-      value={geminiCode}
-      extensions={[
-        langs.tsx(),
-        customLinterTheme,
-        EditorView.lineWrapping
-      ]}
-      /></div>
+        className='border-2'
+        value={geminiCode}
+        extensions={[
+          langs.tsx(),
+          customLinterTheme,
+          EditorView.lineWrapping
+        ]}
+        />}
+      </div>
   </div>
   )
 }
