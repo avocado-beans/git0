@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+![Screenshot](./visualdemo.gif)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**What is Git0?**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*(Well, it's a work in progress, first of all.)*
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Git0 is a v0 and Cursor inspired tool that empowers developers to interact with GitHub repositories directly in their browser, eliminating the need for local clones or forks. Leveraging the power of the Gemini API, Git0 offers two core functionalities: **Explanation** and **Code Modification**. 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![Screenshot](./visualdemo2.gif)
 
-## Learn More
+**Explanation: Demystifying Code with AI**
 
-To learn more about Next.js, take a look at the following resources:
+* **Contextual Understanding:** Git0 extracts relevant context from your GitHub repository, focusing on the specific files you select. This avoids unnecessary processing and potential quota limits. 
+* **RAG-Powered Insights:** By employing Retrieval Augmented Generation (RAG), Git0 provides comprehensive explanations and answers to your coding queries.
+* **Intuitive Interface:** The slide-like component design allows for seamless navigation through your conversation history.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Code Modification: Edit with Ease and AI Assistance**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **In-Browser Code Editor:** A flexible browser-based code editor lets you explore and modify your repository's files directly.
+* **AI-Assisted Editing:** The shortcut-based chat interface (inspired by the Ctrl+K in Cursor) enables you to interact with the AI assistant for precise code modifications.
+* **Code Rating:** Get a comprehensive assessment of your code's quality across various dimensions, including structure, clarity, performance, and security.
 
-## Deploy on Vercel
+**Technical Architecture and Technologies:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **Next.js:** A React framework for building server-rendered and static websites.
+* **Zustand:** A state management solution for efficient and performant state management.
+* **Ace Editor:** A versatile code editor component for editing rich text.
+* **Gemini API:** Google's language model API, powering the intelligent interactions and code modifications.
