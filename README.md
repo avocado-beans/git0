@@ -11,6 +11,7 @@ Git0 is a v0 and Cursor inspired tool that empowers developers to interact with 
 ![Screenshot](./visualdemo2.gif)
 
 *(Only sweet UI and basic chat functionality is present at this stage.)*
+
 *(Nevermind the messy code. I will fix it as I go.)*
 
 **Explanation: Demystifying Code with AI**
