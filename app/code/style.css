@@ -1,0 +1,58 @@
+.black-bg {
+    background-color: black;
+    color: white
+}
+
+body {
+  background-color: black;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+  border-radius: 9999px;
+  background: rgb(9 9 11);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(20, 20, 20);
+  border-radius: 5px;
+}
+
+@keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+.slide-in {
+  transition: transform 1s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.slide-in.active {
+  transform: translateX(0);
+}
+
+.fade-in-from-top-left {
+  opacity: 0;
+  transform: translate(-20px, -20px);
+  animation: fadeInTopLeft 1s ease-in-out;
+}
+
+@keyframes fadeInTopLeft {
+  from {
+    opacity: 0;
+    transform: translate(-20px, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}

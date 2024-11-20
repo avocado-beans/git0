@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        hubot: ['Hubot Sans', 'sans-serif'],
+        typewriter: ['Geist Mono', 'sans-serif'],
+        funnel: ['Funnel Display', 'sans-serif']
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

@@ -1,0 +1,22 @@
+.ace-tomorrow-night .ace_gutter {
+    background: rgb(24 24 27);
+    color: #C5C8C6
+  }
+  
+  .ace-tomorrow-night .ace_print-margin {
+    width: 1px;
+    background: #25282c
+  }
+  
+  .ace-tomorrow-night {
+    background-color: rgb(9 9 11);
+    color: #C5C8C6
+  }
+  
+  .ace-tomorrow-night .ace_cursor {
+    color: #AEAFAD
+  }
+  
+  .ace-tomorrow-night .ace_marker-layer .ace_selection {
+    background: #373B41
+  }

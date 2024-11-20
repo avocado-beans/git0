@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Funnel+Display:wght@300..800&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
