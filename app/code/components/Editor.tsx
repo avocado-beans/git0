@@ -19,7 +19,7 @@ function App() {
     <div className="flex mt-12 w-full h-full">
         <Explorer repoOwner="avocado-beans" repoName="cathequeen" />
 
-        <AceEditor
+        {/* <AceEditor
             className="ace-tomorrow-night font-typewriter"
             height="100%"
             width="100%"
@@ -35,7 +35,7 @@ function App() {
             ref={codeRef}
             // onFocus={()=>{console.log(codeRef.current)}}
             onSelectionChange={(e)=>{console.log(e.anchor.column, e.cursor.column)}}
-        />
+        /> */}
     </div>
   );
 }

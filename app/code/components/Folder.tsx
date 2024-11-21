@@ -18,7 +18,7 @@ export default function Folder(props: {'owner': string, 'repo': string, 'root'?:
     
     useEffect(() => {
         console.log('hey', props.owner, props.repo, props.root)
-        getGitTree(props.owner, props.repo, setFiles, setFolders, props.root);
+        // getGitTree(props.owner, props.repo, setFiles, setFolders, props.root);
       }, []);
 
     return(
@@ -38,7 +38,7 @@ export default function Folder(props: {'owner': string, 'repo': string, 'root'?:
             {showTree == true ? 
             folders.map((v, i) => {
                 console.log('root:', props.root+'/'+props.folderName+'/'+v)
-                return (<Folder key={i}  owner={props.owner} repo={props.repo}  root={props.folderName+'/'+v} folderName={v} files={files} subFolders={folders} />)
+                return (<Folder key={i}  owner={props.owner} repo={props.repo}  root={v} folderName={v} files={files} subFolders={folders} />)
             }) : <></>}
 
             {/* Then reveal files */}

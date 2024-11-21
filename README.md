@@ -1,5 +1,5 @@
 
-![Screenshot](./visualdemo.gif)
+![Screenshot](./readme_files/visualdemo.gif)
 
 
 **What is Git0?**
@@ -8,7 +8,7 @@
 
 Git0 is a v0 and Cursor inspired tool that empowers developers to interact with GitHub repositories directly in their browser, eliminating the need for local clones or forks. Leveraging the power of the Gemini API, Git0 offers two core functionalities: **Explanation** and **Code Modification**. 
 
-![Screenshot](./visualdemo2.gif)
+![Screenshot](./readme_files/visualdemo2.gif)
 
 *(Only sweet UI and basic chat functionality is present at this stage.)*
 

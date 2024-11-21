@@ -9,6 +9,7 @@ export default async function getGitTree(owner:string, repo:string, updateFiles:
 
     console.log('url', url)
     const res = await fetch(url)
+    console.log('res', res)
 
     if (file.length > 0) {
         const res_json = await res.json()
