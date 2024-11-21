@@ -25,7 +25,7 @@ export default function Landing(props: {'setPage': (page: string | undefined)=>v
         <div className='flex flex-col bg-zinc-900 rounded-t-2xl rounded-b-3xl w-full'>
           <span className='flex justify-between gap-4 p-2 px-6 text-slate-400 text-sm'>
           Want to use your own API key?
-          <button className='text-teal-500 font-semibold'>Switch Token</button>
+          <button className='text-teal-500 font-semibold'>Switch Tokens</button>
           </span>
 
           <form className='flex flex-col border-2 border-zinc-900 rounded-2xl w-full gap-4 p-4 bg-zinc-950' onSubmit={(e)=>{e.preventDefault(); console.log('resident evil is a prophecy'); updateText(text)}}>
